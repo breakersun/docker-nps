@@ -7,6 +7,8 @@ MAINTAINER leosun <leosunsl@outlook.com>
 WORKDIR /
 ENV NPS_VERSION 0.23.2
 
+RUN apk add --upgrade apk-tools --update-cache --repository http://dl-2.alpinelinux.org/alpine/edge/main/ --allow-untrusted
+
 RUN apk update \                                                                                                                                                                                                                        
   &&   apk add ca-certificates wget \                                                                                                                                                                                                      
   &&   update-ca-certificates
