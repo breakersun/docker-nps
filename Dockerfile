@@ -1,9 +1,5 @@
 FROM docker.io/project31/aarch64-alpine-qemu:latest
 
-RUN   apk update \                                                                                                                                                                                                                        
-  &&   apk add ca-certificates wget \                                                                                                                                                                                                      
-  &&   update-ca-certificates
-
 RUN [ "cross-build-start" ]
 
 MAINTAINER leosun <leosunsl@outlook.com>
@@ -11,8 +7,12 @@ MAINTAINER leosun <leosunsl@outlook.com>
 WORKDIR /
 ENV NPS_VERSION 0.23.2
 
+RUN apk update \                                                                                                                                                                                                                        
+  &&   apk add ca-certificates wget \                                                                                                                                                                                                      
+  &&   update-ca-certificates
+
 RUN set -x && \
-	wget https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_arm64_server.tar.gz && \ 
+	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_arm64_server.tar.gz && \ 
 	tar xzf linux_arm64_server.tar.gz && \
 	cd /nps && \
 	mkdir \npsconf && \
