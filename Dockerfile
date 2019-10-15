@@ -1,5 +1,9 @@
 FROM docker.io/project31/aarch64-alpine-qemu:latest
 
+RUN   apk update \                                                                                                                                                                                                                        
+  &&   apk add ca-certificates wget \                                                                                                                                                                                                      
+  &&   update-ca-certificates
+
 RUN [ "cross-build-start" ]
 
 MAINTAINER leosun <leosunsl@outlook.com>
