@@ -17,6 +17,8 @@ RUN set -x && \
 	cd .. && \
 	rm -rf *.tar.gz
 
+RUN [ "cross-build-end" ]
+
 ADD start.sh /nps/npsconf/start.sh
 
 RUN chmod +x /nps/npsconf/start.sh
@@ -24,5 +26,3 @@ RUN chmod +x /nps/npsconf/start.sh
 VOLUME /nps/conf
 
 CMD /nps/npsconf/start.sh
-
-RUN [ "cross-build-end" ]
