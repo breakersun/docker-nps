@@ -1,8 +1,7 @@
-FROM docker.io/project31/aarch64-alpine-qemu:3.5-7
+FROM docker.io/project31/aarch64-alpine-qemu:latest
 
 RUN [ "cross-build-start" ]
 
-FROM alpine:3.8
 MAINTAINER leosun <leosunsl@outlook.com>
 
 WORKDIR /
