@@ -10,7 +10,7 @@ ENV NPS_VERSION 0.23.2
 
 RUN set -x && \
 	wget --no-check-certificate https://github.com/cnlh/nps/releases/download/v${NPS_VERSION}/linux_arm64_server.tar.gz && \ 
-	tar xzf linux_amd64_server.tar.gz && \
+	tar xzf linux_arm64_server.tar.gz && \
 	cd /nps && \
 	mkdir \npsconf && \
 	cp conf/* npsconf/ && \
