@@ -1,3 +1,7 @@
+FROM docker.io/project31/aarch64-alpine-qemu:3.5-7
+
+RUN [ "cross-build-start" ]
+
 FROM alpine:3.8
 MAINTAINER leosun <leosunsl@outlook.com>
 
@@ -20,3 +24,5 @@ RUN chmod +x /nps/npsconf/start.sh
 VOLUME /nps/conf
 
 CMD /nps/npsconf/start.sh
+
+RUN [ "cross-build-end" ]
